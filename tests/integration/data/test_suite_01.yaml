@@ -1,0 +1,26 @@
+---
+name: ExampleTestCase
+operation: HelloWorld
+testCases:
+- name: shouldSayHello
+  request:
+    botName: RubyLexExample
+    userId: IntegTest
+    inputText: 'say hello'
+  expected_response:
+    intentName: HelloWorld
+    slots: {}
+    message: 'Hello World!'
+    messageFormat: PlainText
+    dialogState: Fulfilled
+- name: shouldSayHello
+  request:
+    botName: RubyLexExample
+    userId: IntegTest
+    inputText: 'say hello'
+  expected_response:
+    intentName: HelloWorld
+    slots: {}
+    message: 'Hello World!'
+    messageFormat: PlainText
+    dialogState: Fulfilled

@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'RubyAlexaExample
+
+  Sample SAM Template for RubyAlexaExample
+
+  '
+Globals:
+  Function:
+    Timeout: 3
+Resources:
+  RubyLexLambdaExample:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: s3://jag-lambda-deployments/f5d51acca52e4ee7a7873742de977a24
+      Handler: app.lambda_handler
+      Runtime: ruby2.5
+Outputs:
+  RubyLexLambdaExample:
+    Description: Hello World Lambda Function ARN
+    Value:
+      Fn::GetAtt:
+      - RubyLexLambdaExample
+      - Arn
+  RubyLexLambdaExampleIamRole:
+    Description: Implicit IAM Role created for Hello World function
+    Value:
+      Fn::GetAtt:
+      - RubyLexLambdaExampleRole
+      - Arn
